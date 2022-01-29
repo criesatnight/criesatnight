@@ -1,0 +1,686 @@
+
+@font-face {
+    font-family: 'pe';
+    src: url(font/Pixel\ Emulator.otf);
+}
+@font-face {
+    font-family: 'pg';
+    src: url(font/Pixel\ Gosub.otf);
+}
+@font-face {
+    font-family: 'pixels';
+    src: url(font/Pixels.ttf);
+}
+@font-face {
+    font-family: 'abstract';
+    src: url(font/ABSTRACT.TTF);
+}
+@font-face {
+    font-family: '9K';
+    src: url(font/Grand9KPixel.ttf);
+}
+@font-face {
+    font-family: 'unicode';
+    src: url(font/Pixel-UniCode.ttf);
+}
+:root{
+/* ________________COLORS________________ */
+--dark-purple: hsla(295, 16%, 16%, 1);
+--english-violet: hsla(256, 31%, 28%, 1);
+--bdazzled-blue: hsla(218, 29%, 37%, 1);
+--shadow-blue: hsla(217, 21%, 53%, 1);
+--light-gray: hsla(230, 8%, 85%, 1);
+--white: hsla(0, 0%, 100%, 1);
+--cinnabar: hsla(7, 68%, 53%, 1);
+--sweet-brown: hsla(0, 50%, 42%, 1);
+--wine: hsla(357, 38%, 28%, 1);
+/* ________________FONT________________ */
+}
+
+body{
+    background-color: var(--light-gray);
+}
+html{
+    scroll-behavior: smooth;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+#checkbox{
+    display: none;
+}
+
+/* ________________HEADER________________ */
+header.header{
+    width:100%;
+    height: 12vh;
+
+}
+header.header nav.container{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+header.header nav.container nav.small_container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding-left: 100px;
+    align-items: center;
+}
+header.header nav.container nav.small_container div.menu{
+    padding-left: 1500px;
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0;
+    position: fixed;
+}
+header.header nav.container nav.small_container h2.logo{
+    font-family: '9K';
+    color: var(--white);
+    font-size: large;
+    padding-left: 40px;
+    transition: .3s;
+    position: fixed;
+    top: 0;
+}
+header.header nav.container nav.small_container h2.logo:hover{
+    text-shadow: 0 0 15px hsla(0, 0%, 100%, .3);
+}
+header.header nav.container nav.small_container div.menu label{
+    font-family: '9K';
+    color: var(--white);
+    font-size: small;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+header.header nav.container nav.small_container div.menu i.menu{
+    color: var(--white);
+    font-size: xx-large;
+    transition: .35s ease-in-out;
+}
+
+header.header nav.container nav.small_container div.menu i.menu:hover{
+    cursor: pointer;
+    font-size: 38px;
+}
+
+header.header nav.container nav.small_container div.menu input:checked ~ #side-bar{
+    width: 100vh;
+    height: 100vh;
+    background-color: var(--white);
+}
+
+/* ________________NAVIGATION________________ */
+div.sidebar{
+    background-color: var(--shadow-blue);
+    width: 0;
+    height: 100%;
+    transition: .5s ease-in;
+    transition: .4s ease-out;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+div.sidebar ul.nav_list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    list-style: none;
+    
+}
+div.sidebar ul.nav_list li.nav_close a{
+    color:var(--white);
+    text-decoration: none;
+    font-size: xx-large;
+    text-align: justify;
+    transition: .4s;
+}
+div.sidebar ul.nav_list li.nav_item{
+    height: 40px;
+    width: 100%;
+    box-shadow: inset 0 0 0 0 var(--cinnabar);
+    transition:.3s ease-in-out;
+
+}
+div.sidebar ul.nav_list li.nav_item:hover{
+    box-shadow: inset 200px 0 0 0 var(--cinnabar);
+
+
+}
+div.sidebar ul.nav_list li.nav_item a.nav_link{
+    font-family: 'pixels';
+    color:var(--white);
+    text-decoration: none;
+    font-size: xx-large;
+    text-transform: capitalize;
+    text-align: justify;
+    transition: .4s;
+    padding-left: 30px;
+    align-items: baseline;
+    display: flex;
+    z-index: 1;
+}
+div.sidebar ul.nav_list li.nav_item i.nav_icon{
+    font-size: small;
+    color: var(--white);
+    padding-right: 15px;
+}
+div.sidebar ul.nav_list li.nav_close{
+    height: 80px;
+}
+div.sidebar ul.nav_list li.nav_close a{
+    display: flex;
+    padding-top: 35px;
+    padding-left: 137px;
+    text-shadow: 0px 4px 3px var(--english-violet);
+}
+div.sidebar ul.nav_list li.nav_close a:hover{
+    color: var(--cinnabar);
+    text-shadow: 0px 8px 5px var(--english-violet);
+    padding-top: 30px;
+}
+/* ________________TEXT________________ */
+h1{
+    margin-top: 10px;
+    font-family: 'abstract';
+    color: var(--cinnabar);
+    font-size: x-large;
+    text-align: center;
+}
+h2{
+    font-family: '9K';
+}
+h6{
+    font-family: '9K';
+    color: var(--shadow-blue);
+    font-size: large;
+    text-align: center;
+    letter-spacing: 5px;
+    margin-top: 20px;
+}
+h5{
+    font-family: 'unicode';
+    color: var(--bdazzled-blue);
+    font-size: 30px;
+    text-align: justify;
+    font-weight: bold;
+}
+p{
+    font-family: 'unicode';
+    color: var(--bdazzled-blue);
+    text-align: justify;
+    padding-top: 20px;
+}
+nav ul a{
+    text-decoration: none;
+}
+/* ________________HOME________________ */
+main section.home {
+    width: 100%;
+    height: 800px;
+    align-items: center;
+}
+main section.home div.intro{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: space-between;
+}
+main section.home div.intro .intro-img{
+    width: 650px;
+    height: 650px;
+    margin-left: 150px;
+    margin-top: 50px;
+    border: 1px var(--white) ;
+}
+main section.home div.intro .intro-img img{
+    width: 650px;
+    height: 650px;
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+    border: var(--white) 1px;
+}
+main section.home div.intro .intro-text{
+    padding-left: 75px;
+    padding-top: 300px;
+}
+/* ________________ABOUT________________ */
+main section.about{
+    width: 80%;
+    height: 950px;
+    /* background-color: red; */
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 250px;
+    color: var(--white);
+}
+div.subtitle{
+    margin-left: 100px;
+    font-family: '9K';
+    color: var(--white);
+    font-size: 15px;
+    font-weight: bold;
+}
+main section.about div.container{
+    width: 60%;
+    height: 350px;
+    /* background-color: yellowgreen; */
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+}
+main section.about div.container .img{
+    width: 100px;
+    height: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    transition: .3s ease-in-out;
+}
+main section.about div.container .img:hover{
+    width: 110px;
+}
+main section.about div.container .img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+main section.about div.container .para{
+    margin-top: 50px;
+    bottom: 0;
+
+}
+main section.about div.container .para h2{
+    font-size: medium;
+    transition: .5s ease-in-out;
+}
+main section.about div.container .para p{
+    font-size: 25px;
+    transition: .5s ease-in-out;
+}
+div.pt{
+    margin-top: 20px;
+    font-family: 'unicode';
+    color: var(--bdazzled-blue);
+    font-size: 30px;
+    text-align: justify;
+    font-weight: bold;
+}
+div.pt span.popupmbti:hover{
+    visibility: visible;
+}
+div.pt span.popupmbti a.pop{
+    color: var(--cinnabar);
+    text-decoration: none;
+}
+
+/* ________________INFP________________ */
+main section.about div.personality{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    /* background-color: yellow; */
+    margin-top: 20px;
+} 
+main section.about div.personality li.infp{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    height: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+main section.about div.personality li.infp div.TXT{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+main section.about div.personality li.infp div.slider{
+    width: 50%;
+    height: 10px;
+    margin-top: 8px;
+}
+main section.about div.personality li.infp div.slider img{
+    width: 100%;
+    object-fit: contain;
+    align-items: center;
+    margin: auto;
+}
+/* ________________psychotic________________ */
+
+main section.about div.personality li.infp div.TXT div.introversion{
+    align-items: center;
+    font-family: '9K';
+    font-size: 20px;
+    color: var(--cinnabar);
+    text-align: center;
+}
+main section.about div.personality li.infp div.TXT div.sensing{
+    align-items: center;
+    font-family: '9K';
+    font-size: 20px;
+    color: var(--cinnabar);
+    text-align: center;
+}
+main section.about div.personality li.infp div.TXT div.thinking{
+    align-items: center;
+    font-family: '9K';
+    font-size: 20px;
+    color: var(--cinnabar);
+    text-align: center;
+}
+main section.about div.personality li.infp div.TXT div.judging{
+    align-items: center;
+    font-family: '9K';
+    font-size: 20px;
+    color: var(--cinnabar);
+    text-align: center;
+}
+
+main section.about div.personality li.infp div.TXT div.extraversion{
+    align-items: center;
+    font-family: '9K';
+    font-size: 20px;
+    color: var(--cinnabar);
+    text-align: center;
+}
+main section.about div.personality li.infp div.TXT div.intuition{
+    align-items: center;
+    font-family: '9K';
+    font-size: 20px;
+    color: var(--cinnabar);
+    text-align: center;
+}
+main section.about div.personality li.infp div.TXT div.feeling{
+    align-items: center;
+    font-family: '9K';
+    font-size: 20px;
+    color: var(--cinnabar);
+    text-align: center;
+}
+main section.about div.personality li.infp div.TXT div.perceiving{
+    align-items: center;
+    font-family: '9K';
+    font-size: 20px;
+    color: var(--cinnabar);
+    text-align: center;
+
+    position: relative;
+    display: inline-block;
+}
+
+/* ________________hated_this________________ */
+
+
+main section.about div.personality li.infp div.TXT span {
+    font-family: 'pixels';
+    width: 150px;
+    height: 30px;
+    margin: auto;
+    color: var(--light-gray);
+    font-size: 40px;
+    text-align: center;
+    z-index: 1;
+    position: absolute;
+    padding-top: 20px;
+    transition: .3s;
+}
+main section.about div.personality li.infp div.TXT span:hover{
+    color: var(--shadow-blue);
+}
+
+/* ________________VIRUS________________ */
+main section.about div.not{
+    list-style-type: none;
+    height: 200px;
+}
+main section.about div.not a.joke{
+    text-decoration: none;
+    list-style: none;
+    color: var(--light-gray);
+    transition: .3s ease-in-out;
+    font-size: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+main section.about div.not a.joke h2{
+    height: 200px;
+}
+main section.about div.not a.joke:hover{
+    color: var(--cinnabar);
+}
+
+
+
+/* ________________PORTFOLIO________________ */
+main section.portfolio{
+    /* background-color: aqua; */
+    width: 80%;
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+main section.portfolio p{
+    font-size: x-large;
+    letter-spacing: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+main section.portfolio div.gallery{
+    margin-top: 20px;
+    /* background-color: blue; */
+    height: 90%;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+main section.portfolio div.gallery .gallery_column{
+    height: 30%;
+    width: 100%;
+    /* background-color: blueviolet; */
+    display: block;
+    margin-top: 10px;
+}
+main section.portfolio div.gallery .gallery_column .image-1{
+    width: 49.9%;
+    height: 100%;
+    display: inline-block;
+    float: left;
+
+}
+main section.portfolio div.gallery .gallery_column .image-2{
+    width: 49%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+}
+main section.portfolio div.gallery .gallery_column .image-1 .theimg{
+    background-color: var(--shadow-blue);
+    opacity: 50%;
+    width: 95%;
+    height: 100%;
+    float: right;
+    transition: .1s ease-in-out;
+
+}
+main section.portfolio div.gallery .gallery_column .image-2 .theimg{
+    background-color: var(--shadow-blue);
+    opacity: 50%;
+    width: 95%;
+    height: 100%;
+    float: left;
+    transition: .3s ease-in-out;
+}
+main section.portfolio div.gallery .gallery_column .image-1 .theimg:hover{
+    width: 100%;
+    opacity: 60%;
+}
+main section.portfolio div.gallery .gallery_column .image-2 .theimg:hover{
+    width: 100%;
+    opacity: 60%;
+}
+
+/* ________________CONTACT_ME________________ */
+main section.contact{
+    /* background-color: magenta; */
+    width: 80%;
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+main section.contact p.big{
+    font-size: x-large;
+    letter-spacing: 10px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 100px;
+}
+main section.contact div.contact_container{
+    width: 70%;
+    height: 40%;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+
+}
+/* ________________CONTACT_info________________ */
+main section.contact div.contact_container .contact_info{
+    /* background-color: red; */
+    width: 40%;
+    height: 100%;
+
+
+}
+main section.contact div.contact_container .contact_info li.contaction{
+    list-style-type: none;
+    align-items: center;
+    margin-top: 2%;
+
+}
+main section.contact div.contact_container .contact_info li.contaction div.rooi{
+    font-family: '9K';
+    color: var(--shadow-blue);
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+
+}
+main section.contact div.contact_container .contact_info li.contaction div.rooi span{
+    font-size: 12px;
+    padding-bottom: 20px;
+}
+main section.contact div.contact_container .contact_info li.contaction div.rooi i{
+    font-size: 20px;
+    align-items: center;
+    padding-right: 5px;
+}
+
+
+
+/* ________________CONTACT_form________________ */
+main section.contact div.contact_container .contact_form{
+    width: 50%;
+    height: 100%;
+    background-color: var(--white);
+
+}
+main section.contact div.contact_container .contact_form h2{
+    color: var(--cinnabar);
+    font-size: large;
+    text-align: center;
+}
+main section.contact div.contact_container .contact_form div.inputbox span{
+    color: var(--light-gray);
+    font-family: '9k';
+    font-size: 12px;
+    margin-left: 10px;
+    position: absolute;
+    pointer-events: none;
+    padding-bottom: 10px;
+    transition: .2s ease-in-out;
+}
+main section.contact div.contact_container .contact_form div.inputbox{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+main section.contact div.contact_container .contact_form div.inputbox input{
+    width: 90%;
+    height: 40px;
+    margin-left: 10px;
+    border: none;
+    font-family: 'unicode';
+    font-size: 25px;
+    color: var(--shadow-blue);
+    border-bottom: 2px solid var(--shadow-blue);
+    outline: none;
+}
+main section.contact div.contact_container .contact_form div.inputbox textarea{
+    width: 90%;
+    height: 130px;
+    margin-left: 10px;
+    border: none;
+    font-family: 'unicode';
+    font-size: 25px;
+    color: var(--shadow-blue);
+    border-bottom: 2px solid var(--shadow-blue);
+    resize: none;
+    outline: none;
+    
+}
+main section.contact div.contact_container .contact_form div.send input{
+    width: 80px;
+    height: 30px;
+    border: none;
+    font-family: 'unicode';
+    font-size: 20px;
+    color: var(--shadow-blue);
+    outline: none;
+    transition: .3s ease-in-out;
+    box-shadow: inset 0 0 0 0 var(--cinnabar);
+    margin-right: 8%;
+    float: right;
+}
+main section.contact div.contact_container .contact_form div.send input:hover{
+    color: var(--white);
+    box-shadow: inset 80px 0 0 0 var(--cinnabar);
+   
+
+}
+main section.contact div.contact_container .contact_form div.inputbox input:focus ~ span,
+main section.contact div.contact_container .contact_form div.inputbox input:valid ~ span{
+    color: var(--cinnabar);
+    font-size: 10px;
+    transform: translateY(-30px);
+}
+main section.contact div.contact_container .contact_form div.inputbox textarea:focus ~ span,
+main section.contact div.contact_container .contact_form div.inputbox textarea:valid ~ span{
+    color: var(--cinnabar);
+    font-size: 10px;
+    transform: translateY(-122px);
+}
